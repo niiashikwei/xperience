@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "280146839613",
+    "firebase_url": "https://xperience-2bd8b.firebaseio.com",
+    "project_id": "xperience-2bd8b",
+    "storage_bucket": "xperience-2bd8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280146839613:android:6a693cf9b1e369f0",
+        "android_client_info": {
+          "package_name": "ideaz.xperience"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280146839613-n87cqmbqcr5mrce84k8mtftrl0rqi0j9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWwOrF7ys6TleaIKVaLZrDourUWxJHG68"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
