@@ -64,6 +64,7 @@ public class LoginActivity extends Activity {
                         } else {
                             startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                         }
+                        //implement on success starting activity
                     }
                 });
 

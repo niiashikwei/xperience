@@ -5,15 +5,12 @@ import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import ideaz.xperience.R;
-import ideaz.xperience.util.CustomToast;
 
 public class DashboardActivity extends Activity {
 
@@ -21,25 +18,6 @@ public class DashboardActivity extends Activity {
     public void onCreate(Bundle bundle){
         super.onCreate(bundle);
         setContentView(R.layout.activity_dashboard);
-        fadeInWelcomeMessage();
-    }
-
-
-    @Override
-    public void onStart(){
-        super.onStart();
-        fadeInWelcomeMessage();
-    }
-
-    @Override
-    public void onResume(){
-        super.onResume();
-        fadeInWelcomeMessage();
-    }
-
-    @Override
-    public void onRestart(){
-        super.onRestart();
         fadeInWelcomeMessage();
     }
 
