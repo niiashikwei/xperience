@@ -10,6 +10,9 @@
         android:textColor="@color/colorDefault"
         android:backgroundTint="@color/cardview_light_background"
         android:layout_width="match_parent"
+        android:layout_marginLeft="5sp"
+        android:layout_marginRight="5sp"
+        android:layout_marginTop="5sp"
         android:layout_weight="0.5"
         android:layout_height="wrap_content"/>
 
@@ -19,6 +22,9 @@
         android:textColor="@color/colorDefault"
         android:backgroundTint="@color/cardview_light_background"
         android:layout_width="match_parent"
+        android:layout_marginLeft="5sp"
+        android:layout_marginRight="5sp"
+        android:layout_marginTop="5sp"
         android:layout_weight="0.5"
         android:layout_height="wrap_content"/>
 

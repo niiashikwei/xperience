@@ -14,4 +14,6 @@
         completions."
     </string>
     <string name="facebook_app_id">287507054954158</string>
+    <string name="browse_message">Browse for Xperiences near you</string>
+    <string name="create_message">Create a new experience</string>
 </resources>

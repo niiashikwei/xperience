@@ -1,7 +1,13 @@
 package ideaz.xperience.activities;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -10,11 +16,44 @@ import ideaz.xperience.R;
 import ideaz.xperience.util.CustomToast;
 
 public class DashboardActivity extends Activity {
+
     @Override
     public void onCreate(Bundle bundle){
         super.onCreate(bundle);
         setContentView(R.layout.activity_dashboard);
+        fadeInWelcomeMessage();
+    }
+
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        fadeInWelcomeMessage();
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        fadeInWelcomeMessage();
+    }
+
+    @Override
+    public void onRestart(){
+        super.onRestart();
+        fadeInWelcomeMessage();
+    }
+
+    private void fadeInWelcomeMessage() {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        CustomToast.displayMessage(getApplicationContext(), String.format("User is %s", currentUser.getDisplayName()));
+        final TextView welcomeTextView = (TextView) findViewById(R.id.welcome_text);
+        String welcomeMessage = String.format("Welcome to Xperience %s%s", System.getProperty("line.separator"), currentUser.getDisplayName());
+        welcomeTextView.setText(welcomeMessage);
+        welcomeTextView.setAlpha(0);
+        welcomeTextView.animate().alpha(1).setDuration(4000).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                welcomeTextView.setVisibility(View.GONE);
+            }
+        });
     }
 }
