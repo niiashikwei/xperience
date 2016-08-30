@@ -46,11 +46,12 @@ public class DashboardActivity extends Activity {
     }
 
     private void registerButtonListeners() {
-        registerCreateExperienceButton();
-        registerBrowseExperiencesButton();
+        registerCreateXperienceButton();
+        registerBrowseXperiencesButton();
+        registerManageXperiencesButton();
     }
 
-    private void registerCreateExperienceButton() {
+    private void registerCreateXperienceButton() {
         View createExperienceButton = findViewById(R.id.create_experience_button);
         createExperienceButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,12 +61,22 @@ public class DashboardActivity extends Activity {
         });
     }
 
-    private void registerBrowseExperiencesButton() {
+    private void registerBrowseXperiencesButton() {
         View browseExperiencesButton = findViewById(R.id.browse_experience_button);
         browseExperiencesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), BrowseXperiencesActivity.class));
+            }
+        });
+    }
+
+    private void registerManageXperiencesButton() {
+        View browseExperiencesButton = findViewById(R.id.manage_experiences_button);
+        browseExperiencesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ManageXperiencesActivity.class));
             }
         });
     }

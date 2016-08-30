@@ -28,6 +28,7 @@
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.CreateXperienceActivity" />
         <activity android:name=".activities.BrowseXperiencesActivity" />
+        <activity android:name=".activities.ManageXperiencesActivity" />
         <activity android:name="com.facebook.FacebookActivity"
             android:configChanges=
                 "keyboard|keyboardHidden|screenLayout|screenSize|orientation"

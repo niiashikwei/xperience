@@ -16,5 +16,7 @@
     <string name="facebook_app_id">287507054954158</string>
     <string name="browse_message">Browse for Xperiences near you</string>
     <string name="create_message">Create a new experience</string>
+    <string name="manage_message">Manage experiences you own</string>
     <string name="dashboard_title">Dashboard</string>
+    <string name="post_xperience_message">post Xperience</string>
 </resources>

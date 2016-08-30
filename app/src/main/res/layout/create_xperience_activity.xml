@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10sp">
 
+    <TextView
+        android:id="@+id/app_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:fontFamily="cursive"
+        android:textColor="@color/colorDefault"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:text="@string/create_message"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xperience Name: "
+            android:fontFamily="cursive"
+            android:textColor="@color/colorDefault"
+            android:textSize="24sp"/>
+        <EditText
+            android:id="@+id/xperience_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xperience Description: "
+            android:fontFamily="cursive"
+            android:textColor="@color/colorDefault"
+            android:textSize="24sp"/>
+        <EditText
+            android:id="@+id/xperience_description"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:maxLength="120"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/post_experience_button"
+        android:text="@string/post_xperience_message"
+        android:textColor="@color/colorDefault"
+        android:backgroundTint="@color/cardview_light_background"
+        android:layout_margin="10sp"
+        android:textSize="20sp"
+        android:fontFamily="cursive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
