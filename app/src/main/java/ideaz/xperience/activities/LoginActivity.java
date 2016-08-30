@@ -24,11 +24,12 @@ import ideaz.xperience.util.CustomToast;
 
 public class LoginActivity extends Activity {
     private CallbackManager callbackManager;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
         if (firebaseAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
         } else {
@@ -45,35 +46,33 @@ public class LoginActivity extends Activity {
         }
     }
 
-    private void handleFacebookAccessToken(AccessToken token) {
-        CustomToast.displayMessage(getApplicationContext(), "handleFacebookAccessToken:" + token);
-        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        Task<AuthResult> authResultTask = firebaseAuth.signInWithCredential(credential);
-        authResultTask.addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        CustomToast.displayMessage(getApplicationContext(), "signInWithCredential:onComplete:" + task.isSuccessful());
-
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
-                        if (!task.isSuccessful()) {
-                            CustomToast.displayMessage(getApplicationContext(), "signInWithCredential" + task.getException());
-                            CustomToast.displayMessage(getApplicationContext(), "Authentication failed.");
-                        } else {
-                            startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                        }
-                        //implement on success starting activity
-                    }
-                });
-
-    }
-
     @Override
     protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void handleFacebookAccessToken(AccessToken token) {
+        CustomToast.displayMessage(getApplicationContext(), "handleFacebookAccessToken:" + token);
+        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
+        Task<AuthResult> authResultTask = firebaseAuth.signInWithCredential(credential);
+        authResultTask.addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                CustomToast.displayMessage(getApplicationContext(), "signInWithCredential:onComplete:" + task.isSuccessful());
+
+                // If sign in fails, display a message to the user. If sign in succeeds
+                // the auth state listener will be notified and logic to handle the
+                // signed in user can be handled in the listener.
+                if (!task.isSuccessful()) {
+                    CustomToast.displayMessage(getApplicationContext(), "signInWithCredential" + task.getException());
+                    CustomToast.displayMessage(getApplicationContext(), "Authentication failed.");
+                } else {
+                    startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+                    finish();
+                }
+            }
+        });
     }
 
     private void registerFBLoginCallbacks() {

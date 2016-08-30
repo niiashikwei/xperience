@@ -10,8 +10,8 @@ import com.facebook.appevents.AppEventsLogger;
 
 import ideaz.xperience.util.CustomToast;
 
-
 public class ExperienceApplication extends Application {
+
     @Override
     public void onCreate() {
         super.onCreate();
